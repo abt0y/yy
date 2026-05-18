@@ -53,6 +53,8 @@ uvicorn app.main:app --reload
 
 Open `http://127.0.0.1:8000/health` to check the server.
 
+For a full step-by-step guide covering Gemini cookie export, API token setup, base URLs, OpenAI/Claude/Gemini client examples, Docker, OpenWebUI, and troubleshooting, see [DOCUMENTATION.md](DOCUMENTATION.md).
+
 ## Configure Gemini cookies
 
 Provide Gemini Web cookies using either `config.yaml`, JSON files in `cookies/`, or the admin endpoint.
