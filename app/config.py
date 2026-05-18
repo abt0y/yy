@@ -54,9 +54,11 @@ def _as_map(value: object) -> ConfigMap:
 
 def _as_list_of_strings(value: object, fallback: list[str]) -> list[str]:
     if isinstance(value, str):
-        return [part.strip() for part in value.split(",") if part.strip()]
+        parts = [part.strip() for part in value.split(",") if part.strip()]
+        return parts or fallback
     if isinstance(value, list):
-        return [item for item in value if isinstance(item, str)]
+        parts = [item for item in value if isinstance(item, str)]
+        return parts or fallback
     return fallback
 
 
