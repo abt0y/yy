@@ -1,0 +1,14 @@
+services:
+  gwa:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      GWA_CONFIG: /app/config.yaml
+      GEMINI_COOKIE_PATH: /app/gemini_cookies
+    volumes:
+      - ./config.yaml.example:/app/config.yaml:ro
+      - ./cookies:/app/cookies
+      - ./uploads:/app/uploads
+      - ./gemini_cookies:/app/gemini_cookies
+    restart: unless-stopped
